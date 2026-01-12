@@ -2,9 +2,9 @@
 :root{
   --bg:#fbf8ff;
   --card:#ffffff;
-  --accent:#9b5cf6; /* violet clair */
+  --accent:#f6a15c; /* violet clair */
   --text:#221a2b;
-  --muted:#6b5e7a;
+  --muted:#f8e2c0;
   --radius:10px;
 }
 *{box-sizing:border-box}

@@ -87,15 +87,154 @@
       margin-bottom: 2rem;
     }
 
+    /* Modification : taille fixe pour l'image de profil, object-fit et bordure discrète */
     .hero-photo img {
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
       border-radius: 2rem;
       object-fit: cover;
       background: var(--gray-bg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border: 3px solid var(--border);
     }
 
-    /* Buttons */
+    /* --- SECTION COMPÉTENCES (Style Tuiles épurées) --- */
+    #skills { background-color: var(--gray-bg); border-radius: 3rem; margin: 2rem 0; padding: 6rem 2rem; }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-tile {
+      text-align: left;
+      padding: 1rem;
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1rem;
+      filter: grayscale(1) brightness(0.5);
+      transition: filter 0.3s;
+    }
+
+    .skill-tile:hover .skill-icon { filter: grayscale(0) brightness(1); }
+
+    .skill-tile h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-tile p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+    }
+
+    /* --- SECTION PROJETS (Style Cartes visuelles avec images) --- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid var(--border);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .project-thumb {
+      height: 200px; /* Hauteur augmentée pour mieux voir les images */
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    /* Petit effet de zoom sur l'image au survol de la carte */
+    .project-card:hover .project-thumb img {
+        transform: scale(1.05);
+    }
+
+    .project-body { padding: 1.5rem; }
+
+    .tech-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: #eff6ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
+
+    /* --- NOUVELLE SECTION LANGAGES / TECHNOS --- */
+    #technologies { padding: 6rem 0; }
+    .tech-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Un peu plus large */
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin-top: 3rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Modification CSS pour aligner icône et texte */
+    .tech-list-grid li {
+      background: var(--gray-bg);
+      padding: 0.8rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex; /* Flexbox pour aligner */
+      align-items: center; /* Centrer verticalement */
+      justify-content: flex-start; /* Aligner à gauche */
+      gap: 1rem; /* Espace entre l'icône et le texte */
+      transition: background 0.2s, transform 0.2s;
+      border: 1px solid transparent;
+    }
+    
+    .tech-list-grid li:hover {
+      background: #e0e7ff;
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    /* Style pour les nouvelles icônes de techno */
+    .tech-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+
+
+    /* Boutons */
     .btn {
       display: inline-block;
       padding: 0.8rem 2rem;
@@ -104,99 +243,35 @@
       text-decoration: none;
       border-radius: 0.5rem;
       font-weight: 600;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #1d4ed8;
-    }
-
-    /* Projects Grid */
-    section { padding: 6rem 0; }
-    
-    h3 {
-      font-size: 2rem;
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
-
-    .project-thumb {
-      height: 200px;
-      background: var(--gray-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .project-thumb img { max-width: 60%; }
-
-    .project-body { padding: 1.5rem; }
-
-    .project-body h4 { margin-bottom: 0.75rem; font-size: 1.2rem; }
-
-    .project-desc {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tech-list {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
+      transition: all 0.2s;
     }
 
     .btn-outline {
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
       transition: all 0.2s;
     }
 
-    .btn-outline:hover {
-      background: var(--text);
-      color: white;
-    }
+    .btn-outline:hover { background: var(--text); color: white; }
 
-    /* Contact & Footer */
-    .contact { text-align: center; background: var(--gray-bg); border-radius: 2rem; }
-
-    .site-footer {
-      text-align: center;
-      padding: 4rem 0;
-      color: var(--text-light);
-      font-size: 0.9rem;
+    .badge-toeic {
+      display: inline-block;
+      border: 1.5px solid #059669;
+      color: #059669;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 1.5rem;
     }
 
     @media (max-width: 768px) {
       .hero { flex-direction: column-reverse; text-align: center; padding: 4rem 0; }
-      .hero-text h2 { font-size: 2.2rem; }
-      .header-content { flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -207,7 +282,9 @@
       <a href="#" class="logo">Pierre-Louis Ducry</a>
       <nav class="nav">
         <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
         <a href="#projects">Projets</a>
+        <a href="#technologies">Technos</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -217,78 +294,153 @@
     <section class="hero container">
       <div class="hero-text">
         <h2>Bonjour, je suis <span style="color: var(--accent);">Pierre-Louis</span></h2>
-        <p>Étudiant en BUT Informatique — Spécialisé en développement front-end et interfaces immersives.</p>
-        <a class="btn" href="#projects">Explorer mes travaux</a>
+        <p>Étudiant en BUT Informatique, spécialisé en architecture système et développement performant.</p>
+        <a class="btn" href="#projects">Découvrir mes projets</a>
       </div>
       <div class="hero-photo">
-        <img src="assets/profile.svg" alt="Photo de Pierre-Louis" />
+        <img src="assets/moi.png" alt="Photo de Pierre-Louis" />
       </div>
     </section>
 
-    <section id="about" class="container" style="max-width: 800px; text-align: center;">
-      <h3>À propos de moi</h3>
+    <section id="about" class="container" style="max-width: 800px; text-align: center; padding-bottom: 2rem;">
+      <h3>Profil technique</h3>
       <p style="font-size: 1.1rem; color: var(--text-light);">
-        Actuellement en 3ème année de BUT Informatique, je transforme des problématiques complexes en solutions numériques simples. Mon approche repose sur la clarté visuelle et l'efficacité technique, qu'il s'agisse de scripts d'automatisation ou d'expériences en réalité virtuelle.
+        Passionné par l'informatique bas-niveau et l'optimisation, je conçois des solutions où l'efficacité logicielle rencontre la rigueur matérielle.
       </p>
+      <div class="badge-toeic">TOEIC CERTIFIED • NIVEAU C1</div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h3 style="margin-bottom: 4rem;">Expertise BUT Informatique</h3>
+        <div class="skills-grid">
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/server.png" alt="" class="skill-icon">
+            <h4>Administrer</h4>
+            <p>Infrastructures systèmes, réseaux et déploiement sécurisé.</p>
+          </div>
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/processor.png" alt="" class="skill-icon">
+            <h4>Optimiser</h4>
+            <p>Algorithmique avancée et gestion de la performance hardware.</p>
+          </div>
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/code.png" alt="" class="skill-icon">
+            <h4>Réaliser</h4>
+            <p>Développement full-stack et maintenance de code robuste.</p>
+          </div>
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/database.png" alt="" class="skill-icon">
+            <h4>Gérer</h4>
+            <p>Stockage, intégrité et exploitation des données critiques.</p>
+          </div>
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/parallel-tasks.png" alt="" class="skill-icon">
+            <h4>Conduire</h4>
+            <p>Pilotage de projet agile et analyse des besoins clients.</p>
+          </div>
+          <div class="skill-tile">
+            <img src="https://img.icons8.com/ios-filled/100/2563eb/collaboration.png" alt="" class="skill-icon">
+            <h4>Collaborer</h4>
+            <p>Communication technique et synergie en équipe agile.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projects" class="container">
-      <h3>Mes Réalisations</h3>
+      <h3 style="margin-bottom: 3rem;">Mes Réalisations</h3>
       <div class="projects-grid">
+        
         <article class="project-card">
-          <div class="project-thumb"><img src="assets/email_automation.svg" alt="Automation" /></div>
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&auto=format&fit=crop&q=60" alt="E-commerce" />
+          </div>
           <div class="project-body">
-            <div class="tech-list">Python · SMTP · Pandas</div>
-            <h4>Automatisation d'Emails</h4>
-            <p class="project-desc">Script optimisé pour la gestion personnalisée de campagnes de recherche d'alternance.</p>
-            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Voir le code</a>
+            <span class="tech-tag">Java</span><span class="tech-tag">SAÉ 3.01</span>
+            <h4 style="margin: 1rem 0 0.5rem;">Plateforme de Vente</h4>
+            <p class="project-desc">Conception d'un site de vente complet avec gestion de catalogue et commandes.</p>
+            <a class="btn-outline" href="https://github.com/IUT-Blagnac/sae-3-01-devapp-2024-2025-g2a7" target="_blank">Dépôt GitHub</a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-thumb"><img src="assets/hotel_app.svg" alt="Hôtel" /></div>
+          <div class="project-thumb">
+             <img src="https://images.unsplash.com/photo-1616514197671-15d99ce7a6f8?w=500&auto=format&fit=crop&q=60" alt="Bancaire" />
+          </div>
           <div class="project-body">
-            <div class="tech-list">PHP · MySQL · MVC</div>
-            <h4>Logiciel Métier Hôtelier</h4>
-            <p class="project-desc">Système complet de gestion de commandes, facturation et suivi de chambres.</p>
+            <span class="tech-tag">JavaFX</span><span class="tech-tag">SAÉ 2.01</span>
+            <h4 style="margin: 1rem 0 0.5rem;">DailyBank Desktop</h4>
+            <p class="project-desc">Application de gestion bancaire sécurisée avec interface riche et base Oracle.</p>
+            <a class="btn-outline" href="https://github.com/IUT-Blagnac/sae2-01-devapp-2024-sae-2a4" target="_blank">Voir le projet</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60" alt="Code Python" />
+          </div>
+          <div class="project-body">
+            <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span>
+            <h4 style="margin: 1rem 0 0.5rem;">Automate Emailing</h4>
+            <p class="project-desc">Optimisation et envoi de flux de données massifs via scripts SMTP.</p>
             <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Dépôt GitHub</a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-thumb"><img src="assets/dailybank.svg" alt="Bancaire" /></div>
-          <div class="project-body">
-            <div class="tech-list">Java · JDBC · JavaFX</div>
-            <h4>DailyBank Desktop</h4>
-            <p class="project-desc">Application bancaire sécurisée permettant la gestion de comptes et virements complexes.</p>
-            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Présentation</a>
+          <div class="project-thumb">
+             <img src="https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=500&auto=format&fit=crop&q=60" alt="Réalité Virtuelle" />
           </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-thumb"><img src="assets/locur4iot.svg" alt="VR" /></div>
           <div class="project-body">
-            <div class="tech-list">Unity · C# · UX/VR</div>
-            <h4>Interface Locur4IOT</h4>
-            <p class="project-desc">Conception de menus immersifs et navigation mains-libres pour environnements VR.</p>
-            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Prototype</a>
+            <span class="tech-tag">Unity</span><span class="tech-tag">C#</span>
+            <h4 style="margin: 1rem 0 0.5rem;">Interface Locur4IOT</h4>
+            <p class="project-desc">Prototype d'UX immersive en Réalité Virtuelle pour objets connectés.</p>
+            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Explorer l'UX</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="container contact">
-      <h3>Travaillons ensemble</h3>
-      <p>Envoyez-moi un message à : <strong>pierrelouis.ducry01@gmail.com</strong></p>
+    <section id="technologies" class="container" style="text-align: center;">
+      <h3>Technologies Maîtrisées</h3>
+      <p style="color:var(--text-light); margin-bottom: 2rem;">Langages, frameworks et outils appris durant mon parcours en BUT Informatique.</p>
+      <ul class="tech-list-grid">
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-icon"> Java (POO, JavaFX)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon"> Python (Scripting, Pandas)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C/C++" class="tech-icon"> C / C++ (Système)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL" class="tech-icon"> SQL (MySQL, Oracle)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-icon"> PHP (Web MVC)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML/CSS" class="tech-icon"> HTML / CSS / JS</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="tech-icon"> Bash / Shell</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon"> Git / GitHub</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tech-icon"> Linux (Admin)</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-icon"> Docker</li>
+        <li><img src="https://img.icons8.com/ios/50/2563eb/flow-chart.png" alt="UML" class="tech-icon"> UML / Merise</li>
+        <li><img src="https://img.icons8.com/ios/50/2563eb/agile.png" alt="Agile" class="tech-icon"> Méthodes Agiles (Scrum)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container" style="text-align: center; padding: 6rem 2rem;">
+      <h3>Un projet en tête ?</h3>
+      <p style="color:var(--text-light); margin-bottom: 3rem;">Disponible pour des stages ou des collaborations techniques.</p>
+      
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; align-items:center;">
+        <a class="btn" href="mailto:pierrelouis.ducry01@gmail.com">Envoyer un mail</a>
+        <a class="btn-outline" href="cv/CV-Pierre-Louis-Ducry.pdf" target="_blank">Mon CV (PDF)</a>
+      </div>
+      
       <div style="margin-top: 2rem;">
-        <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank" style="margin: 0 0.5rem;">GitHub</a>
-        <a class="btn-outline" href="https://fr.linkedin.com/in/pierre-louis-ducry-340317319" target="_blank" style="margin: 0 0.5rem;">LinkedIn</a>
+        <a href="https://fr.linkedin.com/in/pierre-louis-ducry-340317319" style="margin: 0 1rem; color: var(--text-light); text-decoration: none; font-weight: 600;">LinkedIn</a>
+        <a href="https://github.com/Ducry-PL" style="margin: 0 1rem; color: var(--text-light); text-decoration: none; font-weight: 600;">GitHub</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">© 2026 — Pierre-Louis Ducry — Conçu avec soin.</div>
+    <div class="container" style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.85rem;">
+      © 2026 — Pierre-Louis Ducry — BUT Informatique — TOEIC C1
+    </div>
   </footer>
 
 </body>
