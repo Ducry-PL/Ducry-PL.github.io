@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pierre-Louis Ducry | Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-light: #666666;
+      --accent: #2563eb;
+      --gray-bg: #f8fafc;
+      --border: #e2e8f0;
+      --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-main);
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .hero-photo img {
+      width: 280px;
+      height: 280px;
+      border-radius: 2rem;
+      object-fit: cover;
+      background: var(--gray-bg);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #1d4ed8;
+    }
+
+    /* Projects Grid */
+    section { padding: 6rem 0; }
+    
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .project-thumb {
+      height: 200px;
+      background: var(--gray-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-thumb img { max-width: 60%; }
+
+    .project-body { padding: 1.5rem; }
+
+    .project-body h4 { margin-bottom: 0.75rem; font-size: 1.2rem; }
+
+    .project-desc {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-list {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .btn-outline {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--text);
+      color: white;
+    }
+
+    /* Contact & Footer */
+    .contact { text-align: center; background: var(--gray-bg); border-radius: 2rem; }
+
+    .site-footer {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column-reverse; text-align: center; padding: 4rem 0; }
+      .hero-text h2 { font-size: 2.2rem; }
+      .header-content { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="logo">Pierre-Louis Ducry</a>
+      <nav class="nav">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <h2>Bonjour, je suis <span style="color: var(--accent);">Pierre-Louis</span></h2>
+        <p>Étudiant en BUT Informatique — Spécialisé en développement front-end et interfaces immersives.</p>
+        <a class="btn" href="#projects">Explorer mes travaux</a>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/profile.svg" alt="Photo de Pierre-Louis" />
+      </div>
+    </section>
+
+    <section id="about" class="container" style="max-width: 800px; text-align: center;">
+      <h3>À propos de moi</h3>
+      <p style="font-size: 1.1rem; color: var(--text-light);">
+        Actuellement en 3ème année de BUT Informatique, je transforme des problématiques complexes en solutions numériques simples. Mon approche repose sur la clarté visuelle et l'efficacité technique, qu'il s'agisse de scripts d'automatisation ou d'expériences en réalité virtuelle.
+      </p>
+    </section>
+
+    <section id="projects" class="container">
+      <h3>Mes Réalisations</h3>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-thumb"><img src="assets/email_automation.svg" alt="Automation" /></div>
+          <div class="project-body">
+            <div class="tech-list">Python · SMTP · Pandas</div>
+            <h4>Automatisation d'Emails</h4>
+            <p class="project-desc">Script optimisé pour la gestion personnalisée de campagnes de recherche d'alternance.</p>
+            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Voir le code</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb"><img src="assets/hotel_app.svg" alt="Hôtel" /></div>
+          <div class="project-body">
+            <div class="tech-list">PHP · MySQL · MVC</div>
+            <h4>Logiciel Métier Hôtelier</h4>
+            <p class="project-desc">Système complet de gestion de commandes, facturation et suivi de chambres.</p>
+            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Dépôt GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb"><img src="assets/dailybank.svg" alt="Bancaire" /></div>
+          <div class="project-body">
+            <div class="tech-list">Java · JDBC · JavaFX</div>
+            <h4>DailyBank Desktop</h4>
+            <p class="project-desc">Application bancaire sécurisée permettant la gestion de comptes et virements complexes.</p>
+            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Présentation</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb"><img src="assets/locur4iot.svg" alt="VR" /></div>
+          <div class="project-body">
+            <div class="tech-list">Unity · C# · UX/VR</div>
+            <h4>Interface Locur4IOT</h4>
+            <p class="project-desc">Conception de menus immersifs et navigation mains-libres pour environnements VR.</p>
+            <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank">Prototype</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Travaillons ensemble</h3>
+      <p>Envoyez-moi un message à : <strong>pierrelouis.ducry01@gmail.com</strong></p>
+      <div style="margin-top: 2rem;">
+        <a class="btn-outline" href="https://github.com/Ducry-PL" target="_blank" style="margin: 0 0.5rem;">GitHub</a>
+        <a class="btn-outline" href="https://fr.linkedin.com/in/pierre-louis-ducry-340317319" target="_blank" style="margin: 0 0.5rem;">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 — Pierre-Louis Ducry — Conçu avec soin.</div>
+  </footer>
+
+</body>
+</html>

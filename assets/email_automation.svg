@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#f5eeff"/>
+      <stop offset="1" stop-color="#efe0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="18" fill="url(#g1)"/>
+  <g transform="translate(48,36)">
+    <rect x="20" y="40" width="424" height="200" rx="12" fill="#fff" stroke="#e9deff"/>
+    <path d="M24 48 L236 156 L448 48" fill="none" stroke="#bfa0ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M30 58 L236 170 L442 58" fill="none" stroke="#d6bfff" stroke-width="4"/>
+
+    <!-- icône engrenage -->
+    <g transform="translate(470,120) scale(0.8)">
+      <circle cx="40" cy="40" r="26" fill="#fff" stroke="#d1b3ff" stroke-width="6"/>
+      <path d="M40 22 L40 10" stroke="#b89cff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M58 40 L70 40" stroke="#b89cff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M40 58 L40 70" stroke="#b89cff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M22 40 L10 40" stroke="#b89cff" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <text x="40" y="288" font-family="Segoe UI, Roboto, Arial" font-size="20" fill="#6b5e7a">Automatisation d'envoi d'e‑mails</text>
+  </g>
+</svg>
